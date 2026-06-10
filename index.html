@@ -23,7 +23,7 @@
       --nav-h: 72px;
     }
     html { scroll-behavior: smooth; }
-    body { font-family: 'Barlow', sans-serif; color: var(--black); background: var(--white); overflow-x: hidden; }
+    body { font-family: 'Barlow', sans-serif; color: var(--white); background: var(--white); overflow-x: hidden; }
     img { display: block; max-width: 100%; }
     a { text-decoration: none; color: inherit; }
 
@@ -364,15 +364,24 @@
     .services-cta { text-align: center; margin-top: 40px; }
 
     /* ── Why Us ─────────────────────────────────────── */
-    .why-section { background: var(--white); }
+    .why-section {
+      position: relative;
+      background: url('Why_The_Shop_of_AG.png') center center / cover no-repeat;
+      overflow: hidden;
+    }
+    .why-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 0;
+    }
     .why-inner {
+      position: relative; z-index: 1;
       max-width: 1200px; margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 80px);
       align-items: center;
     }
-    .why-img {
-      position: relative;
-    }
+    .why-img { position: relative; }
     .why-img img {
       width: 100%; display: block;
       border-top: 4px solid var(--yellow);
@@ -382,7 +391,7 @@
       background: var(--yellow); padding: 18px 22px;
       text-align: center;
     }
-    .why-badge .big { 
+    .why-badge .big {
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 900; font-size: 42px; line-height: 1;
       color: var(--black);
@@ -408,7 +417,7 @@
       font-weight: 800; font-size: 18px; text-transform: uppercase;
       margin-bottom: 4px;
     }
-    .why-detail p { font-size: 14px; color: var(--gray); line-height: 1.6; }
+    .why-detail p { font-size: 14px; color: var(--white); line-height: 1.6; }
 
     /* ── Reviews Carousel ───────────────────────────── */
     .reviews-section { background: var(--black); overflow: hidden; }

@@ -538,6 +538,45 @@
       .hero-btns a { width: 100%; max-width: 280px; text-align: center; }
     }
 
+    /* ── Car Brands Carousel ────────────────────────── */
+    .brands-bar {
+      background: var(--white);
+      padding: 20px 0;
+      overflow: hidden;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .brands-track {
+      display: flex;
+      gap: 48px;
+      align-items: center;
+      width: max-content;
+      animation: scroll-brands 30s linear infinite;
+    }
+    .brands-track:hover { animation-play-state: paused; }
+    @keyframes scroll-brands {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .brand-item {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 48px;
+    }
+    .brand-item img {
+      height: 36px;
+      width: auto;
+      max-width: 100px;
+      object-fit: contain;
+      filter: grayscale(1) opacity(0.55);
+      transition: filter 0.25s ease;
+    }
+    .brand-item img:hover {
+      filter: grayscale(0) opacity(1);
+    }
+
     /* ── Safe-area for iOS notch ────────────────────── */
     @supports (padding: max(0px)) {
       #navbar { padding-left: max(clamp(16px, 4vw, 48px), env(safe-area-inset-left)); padding-right: max(clamp(16px, 4vw, 48px), env(safe-area-inset-right)); }
